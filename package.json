@@ -1,0 +1,48 @@
+{
+  "name": "dinos",
+  "version": "0.0.0",
+  "description": "personal Debian Linux distribution",
+  "main": "index.js",
+  "scripts": {
+    "start": "node-dev example",
+    "test:deps": "dependency-check . && dependency-check . --extra --no-dev -i es2040",
+    "test:lint": "standard",
+    "test:node": "ava",
+    "test:coverage": "NODE_ENV=test nyc npm run test:node",
+    "test:coverage:report": "nyc report --reporter=lcov npm run test:node",
+    "test": "npm-run-all -s test:node test:lint test:deps"
+  },
+  "browserify": {
+    "transform": [
+      "es2040"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahdinosaur/dinos.git"
+  },
+  "keywords": [],
+  "author": "Mikey <michael.williams@enspiral.com> (http://dinosaur.is)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/ahdinosaur/dinos/issues"
+  },
+  "homepage": "https://github.com/ahdinosaur/dinos#readme",
+  "devDependencies": {
+    "ava": "^0.20.0",
+    "dependency-check": "^2.7.0",
+    "node-dev": "^3.1.3",
+    "npm-run-all": "^4.0.1",
+    "nyc": "^10.1.2",
+    "standard": "^8.6.0"
+  },
+  "dependencies": {
+    "es2040": "^1.2.3",
+    "pino": "^4.6.0",
+    "pixie": "^2.0.0",
+    "ramda": "^0.24.1",
+    "run-parallel": "^1.1.6",
+    "run-waterfall": "^1.1.3",
+    "try-catch-callback": "^2.0.2"
+  }
+}
