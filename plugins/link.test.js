@@ -1,35 +1,36 @@
 const test = require('ava')
 
-const File = require('./file')
+const Link = require('./link')
 
 test.cb('simple example', t => {
-  const source = 'path/to/file/in/config'
-  const target = '/absolute/path/to/file/on/machine'
+  const source = 'vim/.vimrc'
+  const target = '.vimrc'
   const mode = 0o644
   const user = 'dinosaur'
   const userId = 1000
   const group = 'dinosaur'
   const groupId = 1000
+  const env = {
+    HOME: '/home/dinosaur'
+  }
 
-  const sourceContents = 'hey\n'
   const etcpasswd = `root:x:0:0:root:/root:/bin/bash
 dinosaur:x:1000:1000:dinosaur:/home/dinosaur:/bin/zsh`
   const etcgroup = `root:x:0:
 dinosaur:x:1000:`
 
   const fs = {
-    readFile: (path, encoding, cb) => {
+    readLink: (path, encoding, cb) => {
       if (cb == null) cb = encoding
       if (path === '/etc/passwd') cb(null, etcpasswd)
       else if (path === '/etc/group') cb(null, etcgroup)
-      else if (path === source) cb(null, sourceContents)
-      else return t.fail('bad readFile(path)')
+      else return t.fail('bad readLink(path)')
       t.pass()
     },
-    writeFile: (path, content, cb) => {
-      t.truthy(content)
-      if (path === target) cb(null)
-      else return t.fail('bad writeFile(path, content)')
+    symlink: (_target, path, cb) => {
+      t.is(_target, '/home/dinosaur/.config/dinos/vim/.vimrc')
+      t.is(path, '/home/dinosaur/.vimrc')
+      cb()
     },
     chmod: (path, _mode, cb) => {
       t.is(path, target)
@@ -50,15 +51,12 @@ dinosaur:x:1000:`
     mode,
     user,
     group,
-    fs
+    fs,
+    env
   }
 
 
-  const continuable = File(example)
-
-  continuable((err) => {
-    console.log('err', err)
-    t.end(err)
-  })
+  const continuable = Link(example)
+  continuable(t.end)
 })
 

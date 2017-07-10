@@ -1,16 +1,14 @@
 // based on https://docs.saltstack.com/en/develop/ref/states/all/salt.states.file.html
 
+const { join } = require('path')
 const defaultFs = require('fs')
-const merge = require('ramda/src/merge')
 const is = require('ramda/src/is')
 const isNil = require('ramda/src/isNil')
 const or = require('ramda/src/or')
 const not = require('ramda/src/not')
 const waterfall = require('run-waterfall')
 const parallel = require('run-parallel')
-const pixie = require('pixie')
 const Log = require('pino')
-//const tryCatch = require('try-catch-callback')
 
 const getUser = require('../lib/getUser')
 const getGroup = require('../lib/getGroup')
@@ -30,26 +28,19 @@ function File (options) {
     defaults = {},
     log = Log(),
     fs = defaultFs,
+    env = {}
   } = options
+
+  const {
+    HOME: home
+  } = env
+
+  const sourcePath = join(home, '.config/dinos', source)
+  const targetPath = join(home, target)
 
   var steps = [
     cb => {
-      fs.readFile(source, 'utf8', cb)
-    },
-    (sourceContent, cb) => {
-      tryCatch(() => {
-        return pixie.parse(sourceContent, '{{', '}}')
-      }, cb)
-    },
-    (sourceTemplate, cb) => {
-      tryCatch(() => {
-        const templateData = merge(defaults, data)
-        return pixie.compile(sourceTemplate, templateData)
-      }, cb)
-    },
-    // write target file content
-    (targetContent, cb) => {
-      fs.writeFile(target, targetContent, cb)
+      fs.symlink(sourcePath, targetPath, cb)
     }
   ]
 
@@ -64,11 +55,11 @@ function File (options) {
   if (or(not(isNil(group)), not(isNil(user)))) {
     steps.push(cb => parallel([
       isNil(user)
-        ? done => done(null, user)
+        ? done => done(null, null)
         : done => getUser(fs, user, done)
       ,
       isNil(group)
-        ? done => done(null, group)
+        ? done => done(null, null)
         : done => getGroup(fs, group, done)
     ], (err, [user, group]) => {
       if (err) return cb(err)
@@ -79,14 +70,4 @@ function File (options) {
   }
 
   return callback => waterfall(steps, callback)
-}
-
-function tryCatch (fn, cb) {
-  var result, err = null
-  try {
-    result = fn()
-  } catch (_err) {
-    err = _err
-  }
-  cb(err, result)
 }

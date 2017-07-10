@@ -7,35 +7,53 @@ a personal Debian Linux distribution using a custom configuration managment syst
 ## features
 
 - [ ] provides base configuration management features
-  - [ ] file
-  - [ ] directory
+  - [x] file (as a symlink)
+  - [x] directory (as a symlink)
   - [ ] shell script
+  - [ ] git repo
   - [ ] apt package
   - [ ] apt source
-  - [ ] git repo
-- [ ] supports personal desktop environment configurations:
+- [ ] supports personal desktop environment configurations
   - [ ] debian
   - [ ] users
   - [ ] zsh
   - [ ] vim
   - [ ] nvm
   - [ ] rvm
-  - [ ] misc packages
   - [ ] i3 (desktop)
-  - [ ] google chrome
-  - [ ] firefox
-  - [ ] heroku toolbelt
+  - [ ] wifi
+  - [ ] git
+  - [ ] web
+  - [ ] printer
+  - [ ] word
+  - [ ] spreadsheet
+  - [ ] photo
+  - [ ] drawing
+  - [ ] video
+  - [ ] 3d
+  - [ ] circuits
 - [ ] graphical interface to show configuration and status
   - [ ] detect conflicting changes but don't override without permission
 
-## setup
+## config
+
+```shell
+```
+
+## start
+
+_ignore_
 
 ```shell
 npm i -g dinos
 dinos
+dinos setup # create user
+dinos install debian zsh vim nvm i3
 ```
 
 ## plugin format
+
+_ignore_
 
 a "plugin" is a `dinos` module:
 
