@@ -3,7 +3,7 @@ const test = require('ava')
 const Link = require('./link')
 
 test.cb('simple example', t => {
-  const source = 'vim/.vimrc'
+  const source = '/home/dinosaur/.config/dinos/vim/.vimrc'
   const target = '.vimrc'
   const mode = 0o644
   const user = 'dinosaur'
@@ -20,11 +20,11 @@ dinosaur:x:1000:1000:dinosaur:/home/dinosaur:/bin/zsh`
 dinosaur:x:1000:`
 
   const fs = {
-    readLink: (path, encoding, cb) => {
+    readFile: (path, encoding, cb) => {
       if (cb == null) cb = encoding
       if (path === '/etc/passwd') cb(null, etcpasswd)
       else if (path === '/etc/group') cb(null, etcgroup)
-      else return t.fail('bad readLink(path)')
+      else return t.fail('bad readFile(path)')
       t.pass()
     },
     symlink: (_target, path, cb) => {

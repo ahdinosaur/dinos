@@ -28,14 +28,14 @@ function File (options) {
     defaults = {},
     log = Log(),
     fs = defaultFs,
-    env = {}
+    env = process.env
   } = options
 
   const {
     HOME: home
   } = env
 
-  const sourcePath = join(home, '.config/dinos', source)
+  const sourcePath = source
   const targetPath = join(home, target)
 
   var steps = [
