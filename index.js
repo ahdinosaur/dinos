@@ -26,5 +26,5 @@ function dinos (config, callback) {
       series(steps, cb)
     }
   })
-  parallel(runs, callback)
+  series(runs, callback)
 }

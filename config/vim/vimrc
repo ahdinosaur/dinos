@@ -1,0 +1,57 @@
+" Specify a directory for plugins
+" - For Neovim: ~/.local/share/nvim/plugged
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+" --- Plugs! ---
+Plug 'flazz/vim-colorschemes'
+Plug 'tpope/vim-sensible'
+Plug 'mhinz/vim-grepper'
+Plug 'kien/ctrlp.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
+Plug 'pangloss/vim-javascript'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'jooize/vim-colemak'
+Plug 'leafgarland/typescript-vim'
+" --- /Plugs! ---
+
+call plug#end()
+
+" Vim5 and later versions support syntax highlighting.
+" This enables syntax highlighting by default.
+syntax enable
+
+" set colors
+set t_Co=256
+set background=dark
+colorscheme candycode
+
+" jump to the last position when
+" reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" load indentation rules and plugins
+" according to the detected filetype.
+filetype plugin indent on
+
+let mapleader=","
+
+set showcmd    " Show (partial) command in status line.
+set showmatch    " Show matching brackets.
+set ignorecase   " Do case insensitive matching
+set smartcase    " Do smart case matching
+set incsearch    " Incremental search
+set autowrite    " Automatically save before commands like :next and :make
+set hidden   " Hide buffers when they are abandoned
+set mouse=a    " Enable mouse usage (all modes)
+set encoding=utf-8  " Set encoding as UTF-8"
+
+" set tab / spaces
+set tabstop=8
+set expandtab
+set softtabstop=2
+set shiftwidth=2

@@ -12,7 +12,26 @@ module.exports = [
     target: '.zshrc'
   },
   {
+    type: 'link',
+    source: join(__dirname, 'zshenv'),
+    target: '.zshenv'
+  },
+  {
+    type: 'link',
+    source: join(__dirname, 'zlogin'),
+    target: '.zlogin'
+  },
+  {
+    type: 'link',
+    source: join(__dirname, 'zprofile'),
+    target: '.zprofile'
+  },
+  {
     type: 'aptpkg',
     package: 'zsh'
+  },
+  {
+    type: 'exec',
+    command: 'chsh -s /bin/zsh'
   }
 ]
