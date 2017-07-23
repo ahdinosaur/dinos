@@ -12,7 +12,6 @@ const config = require('./config')
 
 const run = require('./')
 
-run(config, (err, results) => {
+run(config, (err) => {
   if (err) throw err
-  console.log(results)
 })

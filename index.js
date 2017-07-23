@@ -1,19 +1,30 @@
 const plugins = require('./plugins')
 const series = require('run-series')
 const parallel = require('run-parallel')
+const Log = require('pino')
 
 module.exports = dinos
 
-function dinos (config, cb) {
+function dinos (config, callback) {
+  const log = Log()
   const runs = Object.keys(config).map(name => {
-    const plugs = config[name]
-    const steps = plugs.map(plug => {
-      const plugin = plugins[plug.type]
-      return plugin(plug)
+    const stepConfigs = config[name]
+    const steps = stepConfigs.map(_stepConfig => {
+      const stepConfig = Object.assign({ log }, _stepConfig)
+      const plugin = plugins[stepConfig.type]
+      const step = plugin(stepConfig)
+      return next => {
+        log.info(_stepConfig)
+        step((err) => {
+          console.log('done', err)
+          next(err)
+        })
+      }
     })
-    console.log('steps', name, steps)
-    return cb => series(steps, cb)
+    return cb => {
+      log.info(`configuring ${name}`)
+      series(steps, cb)
+    }
   })
-  console.log('runs', runs)
-  parallel(runs, cb)
+  parallel(runs, callback)
 }

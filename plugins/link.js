@@ -9,6 +9,8 @@ const not = require('ramda/src/not')
 const waterfall = require('run-waterfall')
 const parallel = require('run-parallel')
 const Log = require('pino')
+const lnfs = require('../lib/lnfs')
+
 
 const getUser = require('../lib/getUser')
 const getGroup = require('../lib/getGroup')
@@ -40,7 +42,15 @@ function File (options) {
 
   var steps = [
     cb => {
-      fs.symlink(sourcePath, targetPath, cb)
+      log.info(`linking ${sourcePath} to ${targetPath}`)
+      fs.symlink(sourcePath, targetPath, (err) => {
+        if (err) {
+          if (err.code === 'EEXIST') cb(null)
+          else cb(err)
+        }
+        else cb(null)
+      })
+      // lnfs(fs, sourcePath, targetPath, 'file', cb)
     }
   ]
 

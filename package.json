@@ -38,9 +38,13 @@
   },
   "dependencies": {
     "es2040": "^1.2.3",
+    "exit-error": "^1.0.1",
+    "git-pull-or-clone": "^1.1.0",
+    "mkdirp": "^0.5.1",
     "pino": "^4.6.0",
     "pixie": "^2.0.0",
     "ramda": "^0.24.1",
+    "rimraf": "^2.6.1",
     "run-parallel": "^1.1.6",
     "run-series": "^1.1.4",
     "run-waterfall": "^1.1.3",
