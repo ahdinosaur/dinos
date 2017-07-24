@@ -17,14 +17,12 @@ function aptPkg (options) {
 
   if (package) packages.push(package)
 
-  var cmds = []
+  var commands = []
 
-  cmds.push(`apt-get install -y ${packages.join(' ')}`)
-
-  const command = cmds.join(' && ')
+  commands.push(`apt install -y ${packages.join(' ')}`)
 
   return exec({
-    command,
+    commands,
     sudo: true
   })
 }

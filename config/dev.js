@@ -13,7 +13,7 @@ module.exports = [
       'curl',
       // 'aria2',
       // 'rtorrent',
-      'silversearcher-ag'
+      'silversearcher-ag',
 
       // postgres
       'postgresql',
@@ -23,16 +23,16 @@ module.exports = [
       'pgadmin3',
 
       // virtual machines
-      'virtualbox',
+//      'virtualbox',
 
       // disk utilities
-      'gparted',
+//      'gparted',
       // TODO disk space viewer
 
       // security
-      'wireshark',
+//      'wireshark',
       'nmap',
-      'keepassx'
+//      'keepassx'
     ]
   }
 ]

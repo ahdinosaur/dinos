@@ -1,79 +1,35 @@
-- supports personal desktop environment configuration
-  - debian
-  - [ ] users
-  - [ ] zsh
-  - [ ] vim
-  - [ ] nvm
-  - [ ] rvm
-  - [ ] i3 (desktop)
-  - [ ] wifi
-  - [ ] git
-  - [ ] web
-  - [ ] printer
-  - [ ] word
-  - [ ] spreadsheet
-  - [ ] photo
-  - [ ] drawing
-  - [ ] video
-  - [ ] 3d
-  - [ ] circuits
+TODO
 
-## debian
+```
+adduser dinosaur sudo
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+nvm install 8
+```
 
-install latest Debian stable: "stretch" netinstaller
+## users
 
-https://www.debian.org/releases/stable/debian-installer/
+https://security.stackexchange.com/questions/143442/what-are-ssh-keygen-best-practices
 
-## zsh
-
-https://github.com/robbyrussell/oh-my-zsh
-https://github.com/ahdinosaur-os/config/blob/master/pillar/zsh.sls
-
-### `.zshrc`
-### `.zshenv`
-### `.zlogin`
-
-## ag
-
-https://github.com/ggreer/the_silver_searcher
+```
+ssh-keygen -t ed25519 -a 100
+```
 
 ## vim
-
-https://github.com/neovim/neovim
-https://www.reddit.com/r/neovim/comments/6nj466/nvim_appimage/
-https://github.com/junegunn/vim-plug
-https://github.com/tpope/vim-sensible
-https://github.com/jooize/vim-colemak
-https://github.com/pangloss/vim-javascrip
-https://github.com/Shougo/deoplete.nvim
-https://github.com/carlitux/deoplete-ternjs
-http://ternjs.net/
-https://github.com/Valloric/YouCompleteMe
-https://github.com/mhinz/vim-grepper
-
 
 maybe
 
 https://github.com/Shougo/unite.vim
 https://github.com/benekastah/neomake
 
-#### `.vimrc`
-
-```txt
-
-```
-
 ## git
 
-hub
-
-config
+hub: https://github.com/ahdinosaur-os/git-formula/blob/master/git/hub.sls
 
 ## nvm
 
 ## rvm
 
-## i3
+## desktop (kde + i3)
 
 https://i3wm.org/docs/userguide.html
 
@@ -93,21 +49,23 @@ questions
 - launcher
 - keyboard shortcuts (when you forget)
 
-#### `.kde/config`
-
-## kde
-
-backup?
-
 ## web
 
 set default browser to be firefox
 
 - google-chrome
+  - key: https://www.google.com/linuxrepositories/
+  - download from https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    - automatically adds apt source
   - ad blocker
+  - lastpass
+  - http everywhere
   - redux devtools
   - react devtools
 - firefox
   - ad blocker
   - lastpass
   - http everywhere
+- how to set DuckDuckGo as default search engine
+  - https://duck.co/help/desktop/chrome
+  - https://duck.co/help/desktop/firefox

@@ -7,9 +7,9 @@ module.exports = {
   vim: require('./vim'),
   git: require('./git'),
   dev: require('./dev'),
-  media: require('./media'),
-  office: require('./office'),
-  cad: require('./cad'),
+//  media: require('./media'),
+//  office: require('./office'),
+//  cad: require('./cad'),
   web: require('./web'),
   desktop: require('./desktop')
 }
