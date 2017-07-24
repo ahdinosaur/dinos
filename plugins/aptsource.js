@@ -8,6 +8,7 @@
   keyServer: 'keyserver.ubuntu.com'
 }
 */
+const exec = require('./exec')
 
 module.exports = pkgSource
 
@@ -16,18 +17,18 @@ function pkgSource (options) {
     name,
     keyServer,
     keyId
-  }
+  } = options
 
-  var command = `add-apt-repository ${name}`
+  var command = `add-apt-repository -y ${name}`
 
   if (keyServer) {
     command += ` --keyserver ${keyServer}`
   }
 
-  command = command + ' && apt update'
+  const commands = [command, 'apt update']
 
   return exec({
-    command,
+    commands,
     sudo: true
   })
 }

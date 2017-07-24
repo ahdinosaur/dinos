@@ -9,21 +9,21 @@ a personal Debian Linux distribution using a custom configuration managment syst
 - [ ] provides base configuration management features
   - [x] file (as a symlink)
   - [x] directory (as a symlink)
-  - [ ] shell script
-  - [ ] git repo
-  - [ ] apt package
-  - [ ] apt source
+  - [x] shell script
+  - [x] git repo
+  - [x] apt package
+  - [x] apt source
 - [ ] supports personal desktop environment configurations
-  - [ ] debian
+  - [x] debian
   - [ ] users
-  - [ ] zsh
-  - [ ] vim
+  - [x] zsh
+  - [x] vim
   - [ ] nvm
   - [ ] rvm
-  - [ ] i3 (desktop)
+  - [?] desktop (kde + i3)
   - [ ] wifi
-  - [ ] git
-  - [ ] web
+  - [x] git
+  - [?] web
   - [ ] printer
   - [ ] word
   - [ ] spreadsheet
@@ -35,20 +35,16 @@ a personal Debian Linux distribution using a custom configuration managment syst
 - [ ] graphical interface to show configuration and status
   - [ ] detect conflicting changes but don't override without permission
 
-## config
-
-```shell
-```
-
 ## start
 
 _ignore_
 
 ```shell
-npm i -g dinos
-dinos
-dinos setup # create user
-dinos install debian zsh vim nvm i3
+mkdir -p ~/repos/ahdinosaur
+cd ~/repos/ahdinosaur
+git clone git://github.com/ahdinosaur/dinos
+cd dinos
+node bin
 ```
 
 ## plugin format

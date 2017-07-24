@@ -1,6 +1,9 @@
 module.exports = [
   {
     type: 'aptpkg',
-    package: 'task-kde-desktop'
+    packages: [
+      'task-kde-desktop',
+      'i3'
+    ]
   }
 ]

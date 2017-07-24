@@ -6,7 +6,7 @@ const Log = require('pino')
 module.exports = exec
 
 function exec (options) {
-  var { command } = options
+  var { command, commands = [] } = options
 
   const {
     shell = true,
@@ -17,9 +17,15 @@ function exec (options) {
     env = process.env
   } = options
 
-  if (sudo) {
-    command = `sudo ${command}`
+  if (command) {
+    commands.push(command)
   }
+
+  if (sudo) {
+    commands = commands.map(command => `sudo ${command}`)
+  }
+
+  command = commands.join(' && ')
 
   return cb => {
     log.info(`spawning ${command}`)
