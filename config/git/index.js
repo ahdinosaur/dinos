@@ -7,10 +7,15 @@ module.exports = [
     target: '.gitconfig'
   },
   {
+    type: 'aptsource',
+    name: 'ppa:cpick/hub'
+  },
+  {
     type: 'aptpkg',
     packages: [
       'git',
-      'git-gui'
+      'git-gui',
+      'hub'
     ]
   }
   // TODO hub: https://github.com/github/hub/pull/1502/files

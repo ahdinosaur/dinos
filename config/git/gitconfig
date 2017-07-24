@@ -1,3 +1,11 @@
 [user]
 	name = Michael Williams
 	email = michael.williams@enspiral.com
+[core]
+	editor = vim
+
+[merge]
+	tool = vimdiff
+
+[push]
+	default = simple

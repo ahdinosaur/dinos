@@ -11,6 +11,9 @@ Plug 'tpope/vim-sensible'
 Plug 'mhinz/vim-grepper'
 Plug 'kien/ctrlp.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
+Plug 'vim-syntastic/syntastic'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jooize/vim-colemak'
@@ -55,3 +58,63 @@ set tabstop=8
 set expandtab
 set softtabstop=2
 set shiftwidth=2
+set clipboard=unnamedplus
+set synmaxcol=128
+set ttyscroll=10
+set encoding=utf-8
+set wrap
+set number
+set nowritebackup
+set noswapfile
+set nobackup
+set hlsearch
+set ignorecase
+set smartcase
+
+" No show command
+autocmd VimEnter * set nosc
+
+" format the entire file
+nmap <leader>fef ggVG=
+
+" reload current file
+nmap <leader>r :e!<CR>
+
+" quit current file
+nmap <leader>q :q<CR>
+
+" Yank text to the OS X clipboard
+noremap <leader>y "*y
+noremap <leader>yy "*Y
+
+" Preserve indentation while pasting text from the OS X clipboard
+noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
+
+" NERDTree
+nmap <leader>n :NERDTreeToggle<CR>
+let NERDTreeHighlightCursorline=1
+let NERDTreeIgnore = []
+"let NERDTreeIgnore = ['node_modules']
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = { 'mode': 'passive' }
+let g:syntastic_javascript_checkers = ['standard']
+
+" CtrlP
+"nnoremap <silent> t :CtrlP<cr>
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"set wildignore+=node_modules
+let g:ctrlp_working_path_mode = 2
+"let g:ctrlp_by_filename = 1
+let g:ctrlp_max_files = 20000
+let g:ctrlp_max_depth = 20
+
+"fugitive
+set statusline+=%{fugitive#statusline()}

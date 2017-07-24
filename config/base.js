@@ -1,13 +1,12 @@
 module.exports = [
   {
-    type: 'aptpkg'
+    type: 'aptpkg',
     packages: [
-      'build-essential',
-      'cmake',
       'apt-transport-https',
-      'software-properties-common', 'python-software-properties', // add-apt-repository
-      'python-dev',
-      'python3-dev'
+      'software-properties-common', // add-apt-repository
+      'build-essential',
+      'python-dev', // for compiling YouCompleteMe vim plugin
+      'cmake' // for compiling YouCompleteMe vim plugin
     ]
   }
 ]

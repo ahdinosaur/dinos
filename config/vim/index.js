@@ -16,8 +16,10 @@ module.exports = [
   {
     type: 'aptpkg',
     packages: [
-      'vim'
+      'vim',
+      'vim-diff',
+      'vim-gui-common', // for xterm_clipboard support
     ]
   }
   // TODO neovim: https://github.com/neovim/neovim
-]
+]s
