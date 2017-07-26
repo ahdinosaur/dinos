@@ -31,7 +31,7 @@ module.exports = [
     package: 'zsh'
   },
   {
-    type: 'exec',
-    command: 'chsh -s /bin/zsh'
+    type: 'chsh',
+    shell: '/bin/zsh'
   }
 ]

@@ -11,5 +11,6 @@ module.exports = {
 //  office: require('./office'),
 //  cad: require('./cad'),
   web: require('./web'),
-  desktop: require('./desktop')
+  desktop: require('./desktop'),
+  docker: require('./docker')
 }

@@ -19,7 +19,7 @@ function pkgSource (options) {
     keyId
   } = options
 
-  var command = `add-apt-repository -y ${name}`
+  var command = `add-apt-repository -y "${name}"`
 
   if (keyServer) {
     command += ` --keyserver ${keyServer}`
