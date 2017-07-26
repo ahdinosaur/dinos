@@ -3,7 +3,7 @@
 // TODO rev (branch, tag)
 
 const waterfall = require('run-waterfall')
-const getUser = require('./lib/getUser')
+const getUser = require('../lib/getUser')
 const Log = require('pino')
 const defaultFs = require('fs')
 const { join } = require('path')

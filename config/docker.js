@@ -9,6 +9,15 @@ module.exports = [
   },
   {
     type: 'aptpkg',
-    name: 'docker-ce'
+    package: 'docker-ce'
+  },
+  {
+    type: 'exec',
+    commands: [
+      //'groupadd docker',
+      'usermod -aG docker dinosaur',
+      'systemctl enable docker'
+    ],
+    sudo: true
   }
 ]
