@@ -69,3 +69,36 @@ set default browser to be firefox
 - how to set DuckDuckGo as default search engine
   - https://duck.co/help/desktop/chrome
   - https://duck.co/help/desktop/firefox
+
+firefox vimfx
+
+```
+vimfx.set('mode.normal.scroll_left', 'n')
+vimfx.set('mode.normal.scroll_down', 'e')
+vimfx.set('mode.normal.scroll_up', 'i')
+vimfx.set('mode.normal.scroll_right', 'o')
+
+// focus location bar: h
+// focus search bar: H
+// go back in history: z
+// go forward in history: Z
+// paste and go: v
+// paste and go in new tab: V
+// copy current URL: C
+```
+
+chrome vimium: Options -> Advanced Options -> Custom Key mappings.
+
+```
+map  n scrollLeft
+map  e scrollDown
+map  i scrollUp
+map  o scrollRight
+map C copyCurrentUrl
+map a enterVisualMode
+map s enterInsertMode
+map h Vomnibar.activate
+map H Vomnibar.activateInNewTab
+map z goBack
+map Z goForward
+```

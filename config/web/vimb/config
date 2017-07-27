@@ -1,0 +1,4 @@
+nnoremap n j
+nnoremap e k
+nnoremap i l 
+nnoremap o ;
