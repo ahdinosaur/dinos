@@ -75,6 +75,8 @@ steps
   - global shortcuts
     - run command
       - run command: alt+space / meta+s
+    - activity switching
+      - set Activities... to None
 - desktop behavior
   - screen locking
     - activation
@@ -82,6 +84,11 @@ steps
   - activities
     - switching
       - disable walk through activities and reverse
+
+f.lux: https://justgetflux.com/linux.html
+
+- lat: -41.29
+  long: 174.78
 
 ## web
 
