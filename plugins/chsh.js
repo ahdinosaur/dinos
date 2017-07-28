@@ -8,6 +8,8 @@ const Log = require('pino')
 const defaultFs = require('fs')
 const { join } = require('path')
 
+const exec = require('./exec')
+
 module.exports = gitRepo
 
 function gitRepo (options) {
@@ -28,8 +30,8 @@ function gitRepo (options) {
       log.info(user)
       if (user.shell === shell) return cb(null)
       exec({
-        command: `chsh -s "${shell}" "${user}"`
-      })
+        command: `chsh -s "${shell}" "${username}"`
+      })(cb)
     }
   ]
 

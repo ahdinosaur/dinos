@@ -6,7 +6,7 @@ module.exports = [
     packages: [
 //      'vimb',
       'firefox-esr', // TODO more recent firefo
-      'flashplugin-nonfree',
+//      'flashplugin-nonfree',
 //      'xul-ext-pentadactyl',
       'xul-ext-adblock-plus',
       'xul-ext-https-everywhere',
