@@ -78,13 +78,27 @@ vimfx.set('mode.normal.scroll_down', 'e')
 vimfx.set('mode.normal.scroll_up', 'i')
 vimfx.set('mode.normal.scroll_right', 'o')
 
+// scroll left: n
+// scroll down: e
+// scroll up: i
+// scroll right: o
+// previous tab: N
+// next tab: O
+
 // focus location bar: h
 // focus search bar: H
-// go back in history: z
-// go forward in history: Z
 // paste and go: v
 // paste and go in new tab: V
 // copy current URL: C
+// go back in history: z
+// go forward in history: Z
+// follow link in new foreground dab: at
+// follow link in new window: aw
+// follow link in a new private window: ap
+// focus / select element: A
+// open context menu for element: ac
+// click browser element: ab
+// place caret at element: ad
 ```
 
 chrome vimium: Options -> Advanced Options -> Custom Key mappings.
