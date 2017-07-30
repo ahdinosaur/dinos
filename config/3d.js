@@ -4,10 +4,7 @@ module.exports = [
     packages: [
       // computer assisted design
       'openscad',
-      'kicad',
-      'blender',
-      'gimp',
-      'inkscape',
-      'audacity'
+      'blender'
     ]
+  }
 ]

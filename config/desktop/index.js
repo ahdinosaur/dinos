@@ -37,15 +37,5 @@ module.exports = [
   {
     type: 'aptpkg',
     package: 'redshift'
-  },
-  {
-    type: 'link',
-    source: join(__dirname, 'redshift.conf'),
-    target: '.config/redshift.conf'
-  },
-  {
-    type: 'link',
-    source: join(__dirname, 'xinitrc'),
-    target: '.xinitrc'
   }
 ]

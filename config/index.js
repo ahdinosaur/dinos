@@ -7,10 +7,14 @@ module.exports = {
   vim: require('./vim'),
   git: require('./git'),
   dev: require('./dev'),
-//  media: require('./media'),
-//  office: require('./office'),
-//  cad: require('./cad'),
   web: require('./web'),
   desktop: require('./desktop'),
-  docker: require('./docker')
+  docker: require('./docker'),
+  document: require('./document'),
+  image: require('./image'),
+  draw: require('./draw'),
+  '3d': require('./3d'),
+  circuits: require('./circuits'),
+  video: require('./video'),
+  audio: require('./audio')
 }

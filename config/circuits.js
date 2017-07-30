@@ -2,7 +2,8 @@ module.exports = [
   {
     type: 'aptpkg',
     packages: [
-      'libreoffice',
-      'texmaker'
+      // computer assisted design
+      'kicad'
     ]
+  }
 ]
