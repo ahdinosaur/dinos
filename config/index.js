@@ -9,7 +9,6 @@ module.exports = {
   dev: require('./dev'),
   web: require('./web'),
   desktop: require('./desktop'),
-  docker: require('./docker'),
   document: require('./document'),
   image: require('./image'),
   draw: require('./draw'),
