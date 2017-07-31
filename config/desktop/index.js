@@ -23,18 +23,6 @@ module.exports = [
     target: '.config/plasma-workspace/env/wm.sh'
   },
   {
-    type: 'exec',
-    command: `cat ${fluxAptSourceList} | sudo tee /etc/apt/sources.list.d/flux.list`,
-  },
-  {
-    type: 'exec',
-    command: `cat ${fluxAptKey} | sudo tee /etc/apt/trusted.gpg.d/flux.asc`,
-  },
-  {
-    type: 'aptpkg',
-    package: 'fluxgui'
-  },
-  {
     type: 'aptpkg',
     package: 'redshift'
   }
