@@ -13,6 +13,10 @@ module.exports = [
     ]
   },
   {
+    type: 'exec',
+    command: `mkdir -p .config/i3`
+  },
+  {
     type: 'link',
     source: join(__dirname, 'i3/config'),
     target: '.config/i3/config'
