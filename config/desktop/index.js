@@ -14,7 +14,8 @@ module.exports = [
   },
   {
     type: 'exec',
-    command: `mkdir -p .config/i3`
+    command: `mkdir -p $HOME/.config/i3`
+
   },
   {
     type: 'link',
