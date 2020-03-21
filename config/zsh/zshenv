@@ -4,5 +4,12 @@
 # commands that produce output or assume the shell is attached to
 # a tty
 
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 export TERM=xterm-256color
+
+source $HOME/.cargo/env
+
+alias android-studio='/opt/android-studio/bin/studio.sh'
+
+export NAME="Michael Williams"
+export EMAIL="michael.williams@enspiral.com"

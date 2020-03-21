@@ -122,6 +122,15 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+P restart
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+# This would go into your .config/i3/config to bind to Super+slash
+bindsym $mod+slash exec "/home/dinosaur/Downloads/splatmoji/splatmoji type"
+
 # restart plasma shell
 # https://askubuntu.com/questions/663701/how-to-restart-kde-5-interface/663702#663702
 # 

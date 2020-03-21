@@ -14,10 +14,17 @@ Plug 'kien/ctrlp.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
 Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'jason0x43/vim-js-indent'
+Plug 'rust-lang/rust.vim'
+Plug 'sirtaj/vim-openscad'
+Plug 'w0rp/ale'
+Plug 'jxnblk/vim-mdx-js'
 " --- /Plugs! ---
 
 call plug#end()
@@ -118,3 +125,16 @@ let g:ctrlp_max_depth = 20
 
 "fugitive
 set statusline+=%{fugitive#statusline()}
+
+" rust
+let g:rustfmt_autosave = 1
+
+" eslint
+let g:ale_javascript_eslint_suppress_missing_config = 1
+let g:ale_linters = {
+\  'javascript': ['eslint', 'standard']
+\}
+let g:ale_fixers = {
+\  'javascript': ['prettier', 'eslint', 'prettier_standard', 'standard']
+\}
+let g:ale_fix_on_save = 1

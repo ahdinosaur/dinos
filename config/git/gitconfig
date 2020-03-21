@@ -1,6 +1,9 @@
 [user]
 	name = Michael Williams
 	email = michael.williams@enspiral.com
+[color]
+	ui = auto
+	diff = auto
 [core]
 	editor = vim
 
@@ -9,3 +12,8 @@
 
 [push]
 	default = simple
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

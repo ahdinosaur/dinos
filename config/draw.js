@@ -2,7 +2,8 @@ module.exports = [
   {
     type: 'aptpkg',
     packages: [
-      'inkscape'
+      'inkscape',
+      'librecad'
     ]
   }
 ]

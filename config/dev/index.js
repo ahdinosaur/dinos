@@ -1,6 +1,8 @@
 const { join } = require('path')
 
 const dockerAptSourceList = join(__dirname, 'apt/sources.list.d/docker.list')
+const peekAptSourceList = join(__dirname, 'apt/sources.list.d/peek.list')
+const peekAptKey = join(__dirname, 'apt/trusted.gpg.d/peek.asc')
 
 // https://github.com/ggreer/the_silver_searcher
 module.exports = [
@@ -38,6 +40,24 @@ module.exports = [
       'nmap',
 //      'keepassx'
     ]
+  },
+  // peek (https://github.com/phw/peek#ubuntu)
+  {
+    type: 'exec',
+    command: `cat ${peekAptSourceList} | sudo tee /etc/apt/sources.list.d/peek.list`
+  },
+  {
+    type: 'exec',
+    command: `cat ${peekAptKey} | sudo tee /etc/apt/trusted.gpg.d/peek.asc`
+  },
+  {
+    type: 'exec',
+    command: 'apt update -y',
+    sudo: true
+  },
+  {
+    type: 'aptpkg',
+    package: 'peek'
   },
   // docker
   {
