@@ -4,7 +4,7 @@ module.exports = [
   {
     type: 'aptpkg',
     packages: [
-      'gnome-shell-extension-redshift'
+      'redshift-gtk'
     ]
   }
   /*
