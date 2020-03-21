@@ -11,7 +11,8 @@ Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-sensible'
 Plug 'mhinz/vim-grepper'
 Plug 'kien/ctrlp.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --tern-completer' }
+" Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --ts-completer --rust-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
 Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'

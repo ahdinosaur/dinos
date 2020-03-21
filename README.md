@@ -40,12 +40,19 @@ a personal Debian Linux distribution using a custom configuration managment syst
 _ignore_
 
 ```shell
+# on debian: adduser dinosaur sudo
+sudo apt install git node npm
 mkdir -p ~/repos/ahdinosaur
 cd ~/repos/ahdinosaur
 git clone git://github.com/ahdinosaur/dinos
 cd dinos
+npm install
 node bin
 ```
+
+## config
+
+see [config](./config/README.md)
 
 ## plugin format
 
