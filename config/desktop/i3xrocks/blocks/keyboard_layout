@@ -1,0 +1,23 @@
+#!/bin/bash
+
+VALUE_COLOR=${color:-$(xrescat i3xrocks.value.color)}
+VALUE_FONT=${font:-$(xrescat i3xrocks.value.font)}
+
+PANGO_START="<span color=\"${VALUE_COLOR}\" font_desc=\"${VALUE_FONT}\">"
+PANGO_END="</span>"
+
+gsettings get org.gnome.desktop.input-sources mru-sources | sed -r "s,\S*\s'([^']+).*,$PANGO_START\1$PANGO_END,"
+
+if [ ! -z "$button" ]; then
+  NUM_LAYOUTS=$(gsettings get org.gnome.desktop.input-sources sources | tr -d -c '(' | awk '{ print length; }')
+  CURRENT_LAYOUT_INDEX=$(gsettings get org.gnome.desktop.input-sources current | cut -d " " -f 2)
+
+  NEXT_LAYOUT_INDEX=$((${CURRENT_LAYOUT_INDEX} + 1))
+  if [ "${NEXT_LAYOUT_INDEX}" -ge "${NUM_LAYOUTS}" ]
+  then
+    NEXT_LAYOUT_INDEX=0
+  fi
+
+  gsettings set org.gnome.desktop.input-sources current ${NEXT_LAYOUT_INDEX}
+fi
+

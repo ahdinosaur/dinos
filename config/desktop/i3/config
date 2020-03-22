@@ -8,7 +8,7 @@ set $mod Mod4
 set $alt Mod1
 
 # i3xrocks config file. Override this for custom status indicators on the bar.
-set $i3xrocks_config /etc/regolith/i3xrocks/config
+set $i3xrocks_config ~/.config/regolith/i3xrocks/config
 
 # path to terminal. Override this to specify a custom terminal.
 set $terminal_path /usr/bin/st
@@ -44,7 +44,8 @@ hide_edge_borders smart
 bindsym $mod+Return exec $terminal_path
 
 # start a web browser
-bindsym $mod+Shift+Return exec /usr/bin/sensible-browser
+# bindsym $mod+Shift+Return exec /usr/bin/sensible-browser
+bindsym $mod+Shift+Return exec /usr/bin/firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -178,7 +179,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Logout of session
-bindsym $mod+Shift+e exec /usr/bin/gnome-session-quit --logout
+bindsym $mod+Shift+l exec /usr/bin/gnome-session-quit --logout
 
 # Reboot computer
 bindsym $mod+Shift+b exec /usr/bin/gnome-session-quit --reboot
@@ -196,7 +197,7 @@ bindsym $mod+Shift+s exec systemctl suspend
 bindsym $mod+c exec gnome-control-center
 bindsym $mod+d exec gnome-control-center display
 bindsym $mod+w exec gnome-control-center wifi
-bindsym $mod+Shift+n exec nautilus
+bindsym $mod+Shift+k exec nautilus
 bindsym $mod+m exec /usr/share/rofication/rofication-gui.py
 
 # i3-snapshot for load/save current layout
