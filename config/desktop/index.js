@@ -11,6 +11,10 @@ module.exports = [
     type: 'aptpkg',
     packages: [
       'regolith-desktop',
+      'pulseaudio',
+      'pavucontrol',
+      'alsa-utils',
+      'fonts-font-awesome',
       'redshift-gtk'
     ]
   },

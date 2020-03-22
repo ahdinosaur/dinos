@@ -1,5 +1,8 @@
 # i3xrocks config file
 # # The man page for i3blocks is hosted at http://vivien.github.io/i3blocks
+
+# contrib blocks: https://github.com/vivien/i3blocks-contrib
+
 #
 # List of valid properties:
 #
@@ -38,6 +41,12 @@ command=i3-msg -q exec /usr/bin/remontoire-toggle
 [keyboard_layout]
 interval=1
 
+# Volume
+[volume_pulseaudio]
+interval=5
+signal=1
+USE_ALSA_NAME=1
+
 # Network manager VPN
 #
 # Displays currently connected VPN using the nm-cli tool.
@@ -60,12 +69,6 @@ interval=1
 [nettraffic]
 interval=10
 
-# Keyboard layout
-#
-# Displays current keyboard layout.
-#[keyboard_layout]
-#interval=persist
-
 # CPU usage
 #
 # The script may be called with -w and -c switches to specify thresholds,
@@ -80,6 +83,9 @@ min_width=100%
 [battery3]
 interval=30
 instance=BAT0
+
+[load_average]
+interval=10
 
 # Rofication
 #
