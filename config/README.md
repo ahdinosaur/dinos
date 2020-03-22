@@ -79,21 +79,19 @@ f.lux: https://justgetflux.com/linux.html
 
 ## web
 
-set default browser to be firefox
-
-- google-chrome
-  - key: https://www.google.com/linuxrepositories/
-  - download from https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    - automatically adds apt source
-  - ad blocker
-  - lastpass
-  - http everywhere
-  - redux devtools
-  - react devtools
 - firefox
-  - ad blocker
-  - lastpass
-  - http everywhere
+  - login to sync profile
+  - if not sync-ing
+    - extensions
+      - 1pass
+      - duckduckgo
+      - earth view
+      - https everywhere
+      - lastpass
+      - scrum for trello
+      - ublock origin
+      - react devtools
+- google-chrome
 - how to set DuckDuckGo as default search engine
   - https://duck.co/help/desktop/chrome
   - https://duck.co/help/desktop/firefox
