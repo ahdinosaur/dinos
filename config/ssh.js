@@ -9,6 +9,7 @@ module.exports = [
   {
     type: 'exec',
     commands: [
+      'mkdir -p ~/.ssh',
       'if ! [ -e "~/.ssh/id_ed25519" ]; then ssh-keygen -t ed25519 -a 100 -f "~/.ssh/id_ed25519" -N ""; fi',
       'if ! [ -e "~/.ssh/id_rsa" ]; then ssh-keygen -t rsa -b 4096 -o -a 100 -f "~/.ssh/id_rsa" -N ""; fi'
     ]
