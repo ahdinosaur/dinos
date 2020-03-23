@@ -7,6 +7,7 @@
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 export TERM=xterm-256color
 
+export PATH="$HOME/.cargo/bin:$PATH"
 source $HOME/.cargo/env
 
 alias android-studio='/opt/android-studio/bin/studio.sh'

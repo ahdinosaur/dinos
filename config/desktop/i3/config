@@ -173,10 +173,10 @@ bindsym $mod+$alt+Ctrl+8 move container to workspace number $ws18; workspace num
 bindsym $mod+$alt+Ctrl+9 move container to workspace number $ws19; workspace number $ws19
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+z reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+z restart
 
 # Logout of session
 bindsym $mod+Shift+l exec /usr/bin/gnome-session-quit --logout
@@ -194,7 +194,7 @@ bindsym $mod+Escape exec gnome-screensaver-command --lock
 bindsym $mod+Shift+s exec systemctl suspend
 
 # shortcuts for common system configuration tasks
-bindsym $mod+c exec gnome-control-center
+bindsym $mod+g exec gnome-control-center
 bindsym $mod+d exec gnome-control-center display
 bindsym $mod+w exec gnome-control-center wifi
 bindsym $mod+Shift+k exec nautilus
@@ -326,7 +326,7 @@ bar {
   font $i3-wm.bar.font
   separator_symbol " "
   status_command i3xrocks -c $i3xrocks_config
-  tray_output none
+  tray_output primary
   strip_workspace_numbers yes
 
   colors {
@@ -361,3 +361,9 @@ exec --no-startup-id /usr/bin/unclutter -b
 bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks 
 bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
 bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
+
+# Clipboard
+exec --no-startup-id parcellite
+
+# Redshift
+exec --no-startup-id redshift-gtk

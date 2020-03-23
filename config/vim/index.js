@@ -7,7 +7,7 @@ module.exports = [
     packages: [
       'vim',
 //      'vimdiff',
-      'vim-gui-common', // for xterm_clipboard support
+      'vim-gtk3', // for xterm_clipboard support
       'python3-dev', // for compiling YouCompleteMe vim plugin
       'cmake' // for compiling YouCompleteMe vim plugin
     ]

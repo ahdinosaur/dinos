@@ -1,5 +1,4 @@
 const { join } = require('path')
-const { readdirSync } = require('fs')
 
 module.exports = [
   // https://regolith-linux.org/docs/getting-started/install/
@@ -15,6 +14,7 @@ module.exports = [
       'pavucontrol',
       'alsa-utils',
       'fonts-font-awesome',
+      'parcellite',
       'redshift-gtk'
     ]
   },
@@ -39,8 +39,22 @@ module.exports = [
     type: 'link',
     source: join(__dirname, 'i3xrocks/blocks'),
     target: '.config/regolith/i3xrocks/blocks'
+  },
+  {
+    type: 'link',
+    source: join(__dirname, 'i3xrocks/blocks'),
+    target: '.config/regolith/i3xrocks/blocks'
+  },
+  {
+    type: 'link',
+    source: join(__dirname, 'parcellite/parcelliterc'),
+    target: '.config/parcellite/parcelliterc'
+  },
+  {
+    type: 'exec',
+    commands: [
+      // set keyboard layouts
+      `gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us+colemak'), ('xkb', 'us')]"`
+    ]
   }
-
-  // TODO
-  // gsettings set org.gnome.desktop.input-sources sources "[('us+colemak', 'us')]"
 ]
