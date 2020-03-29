@@ -7,9 +7,11 @@ module.exports = {
   zsh: require('./zsh'),
   vim: require('./vim'),
   git: require('./git'),
-  // dev: require('./dev'),
   web: require('./web'),
-  desktop: require('./desktop')
+  desktop: require('./desktop'),
+  docker: require('./docker'),
+  postgres: require('./postgres'),
+  dev: require('./dev')
   // document: require('./document'),
   // image: require('./image'),
   // draw: require('./draw'),

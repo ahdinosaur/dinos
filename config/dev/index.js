@@ -1,9 +1,5 @@
 const { join } = require('path')
 
-const dockerAptSourceList = join(__dirname, 'apt/sources.list.d/docker.list')
-const peekAptSourceList = join(__dirname, 'apt/sources.list.d/peek.list')
-const peekAptKey = join(__dirname, 'apt/trusted.gpg.d/peek.asc')
-
 // https://github.com/ggreer/the_silver_searcher
 module.exports = [
   {
@@ -21,13 +17,6 @@ module.exports = [
       // 'rtorrent',
       'silversearcher-ag',
 
-      // postgres
-      'postgresql',
-      'postgresql-client',
-      'postgresql-contrib',
-      'postgresql-server-dev-all',
-      'pgadmin3',
-
       // virtual machines
 //      'virtualbox',
 
@@ -37,53 +26,17 @@ module.exports = [
 
       // security
 //      'wireshark',
-      'nmap',
+      'nmap'
 //      'keepassx'
     ]
-  },
+  }
   // peek (https://github.com/phw/peek#ubuntu)
+  // heroku-cli
+  /*
   {
     type: 'exec',
-    command: `cat ${peekAptSourceList} | sudo tee /etc/apt/sources.list.d/peek.list`
-  },
-  {
-    type: 'exec',
-    command: `cat ${peekAptKey} | sudo tee /etc/apt/trusted.gpg.d/peek.asc`
-  },
-  {
-    type: 'exec',
-    command: 'apt update -y',
-    sudo: true
-  },
-  {
-    type: 'aptpkg',
-    package: 'peek'
-  },
-  // docker
-  {
-    type: 'exec',
-    command: `curl -fsSL https://download.docker.com/linux/debian/gpg | sudo tee /etc/apt/trusted.gpg.d/docker.asc`
-  },
-  {
-    type: 'exec',
-    command: `cat ${dockerAptSourceList} | sudo tee /etc/apt/sources.list.d/docker.list`
-  },
-  {
-    type: 'exec',
-    command: 'apt update -y',
-    sudo: true
-  },
-  {
-    type: 'aptpkg',
-    package: 'docker-ce'
-  },
-  {
-    type: 'exec',
-    commands: [
-      //'groupadd docker',
-      'usermod -aG docker dinosaur',
-      'systemctl enable docker'
-    ],
+    command: 'curl https://cli-assets.heroku.com/install-ubuntu.sh | sh',
     sudo: true
   }
+  */
 ]

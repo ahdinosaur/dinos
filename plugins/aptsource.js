@@ -25,10 +25,10 @@ function pkgSource (options) {
     command += ` --keyserver ${keyServer}`
   }
 
-  const commands = [command, 'apt update']
+  // const commands = [command, 'apt update']
 
   return exec({
-    commands,
+    command,
     sudo: true
   })
 }
