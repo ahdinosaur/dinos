@@ -39,5 +39,24 @@ module.exports = [
   {
     type: 'exec',
     command: 'if ! [ -x "$(command -v heroku)" ]; then curl https://cli-assets.heroku.com/install-ubuntu.sh | sh; fi'
+  },
+  // ruby
+  {
+    type: 'aptsource',
+    name: 'ppa:rael-gc/rvm'
+  },
+  {
+    type: 'aptpkg',
+    package: 'rvm'
+  },
+  // node.js
+  {
+    type: 'exec',
+    command: 'if [ ! -d "$HOME/.nvm" ]; then git clone git://github.com/nvm-sh/nvm.git "$HOME/.nvm"; fi; cd "$HOME/.nvm" && git pull && git checkout v0.35.3'
+  },
+  // rust
+  {
+    type: 'exec',
+    command: 'if ! [ -x "$(command -v rustup)" ]; then curl https://sh.rustup.rs -sSf | sh -s -- -y --no-modify-path; fi'
   }
 ]

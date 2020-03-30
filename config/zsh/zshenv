@@ -7,10 +7,26 @@
 export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
 export TERM=xterm-256color
 
+export NAME="Michael Williams"
+export EMAIL="michael.williams@enspiral.com"
+
+# ruby (rvm)
+source "/etc/profile.d/rvm.sh"
+
+# rust (cargo)
 export PATH="$HOME/.cargo/bin:$PATH"
 source $HOME/.cargo/env
 
-alias android-studio='/opt/android-studio/bin/studio.sh'
+# javascript (nvm)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-export NAME="Michael Williams"
-export EMAIL="michael.williams@enspiral.com"
+# android
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export ANDROID_AVD_HOME=$HOME/.android/avd
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools

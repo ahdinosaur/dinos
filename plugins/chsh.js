@@ -1,7 +1,5 @@
 // https://docs.saltstack.com/en/develop/ref/states/all/salt.states.git.html
 
-// TODO rev (branch, tag)
-
 const waterfall = require('run-waterfall')
 const getUser = require('../lib/getUser')
 const Log = require('pino')
@@ -10,9 +8,9 @@ const { join } = require('path')
 
 const exec = require('./exec')
 
-module.exports = gitRepo
+module.exports = chSh
 
-function gitRepo (options) {
+function chSh (options) {
   const {
     shell,
     log = Log(),
