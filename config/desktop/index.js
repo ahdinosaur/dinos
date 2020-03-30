@@ -71,6 +71,7 @@ module.exports = [
     commands: [
       // set keyboard layouts
       `gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us+colemak'), ('xkb', 'us')]"`,
+      `gsettings set org.gnome.desktop.input-sources xkb-options "['caps:escape']"`,
       // set natural (reverse) mouse scroll
       'gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true',
       // power manager
