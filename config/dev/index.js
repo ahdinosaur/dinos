@@ -38,7 +38,6 @@ module.exports = [
   // heroku-cli
   {
     type: 'exec',
-    command: 'if ! [ -x "$(command -v heroku)" ]; then curl https://cli-assets.heroku.com/install-ubuntu.sh | sh; fi',
-    sudo: true
+    command: 'if ! [ -x "$(command -v heroku)" ]; then curl https://cli-assets.heroku.com/install-ubuntu.sh | sh; fi'
   }
 ]
