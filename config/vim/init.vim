@@ -32,10 +32,11 @@ call plug#end()
 
 " Vim5 and later versions support syntax highlighting.
 " This enables syntax highlighting by default.
-syntax enable
+syntax enable " legacy vim
 
 " set colors
-set t_Co=256
+set termguicolors
+set t_Co=256 " legacy vim
 set background=dark
 colorscheme candycode
 
@@ -47,7 +48,7 @@ endif
 
 " load indentation rules and plugins
 " according to the detected filetype.
-filetype plugin indent on
+filetype plugin indent on " legacy vim
 
 let mapleader=","
 
@@ -68,7 +69,6 @@ set softtabstop=2
 set shiftwidth=2
 set clipboard=unnamedplus
 set synmaxcol=128
-set ttyscroll=10
 set encoding=utf-8
 set wrap
 set number

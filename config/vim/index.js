@@ -1,21 +1,18 @@
 const { join } = require('path')
 
 module.exports = [
-  // TODO neovim: https://github.com/neovim/neovim
   {
     type: 'aptpkg',
     packages: [
-      'vim',
-//      'vimdiff',
-      'vim-gtk3', // for xterm_clipboard support
+      'neovim',
       'python3-dev', // for compiling YouCompleteMe vim plugin
       'cmake' // for compiling YouCompleteMe vim plugin
     ]
   },
   {
     type: 'link',
-    source: join(__dirname, 'vimrc'),
-    target: '.vimrc'
+    source: join(__dirname, 'init.vim'),
+    target: '.config/nvim/init.vim'
   },
   // https://github.com/junegunn/vim-plug
   {

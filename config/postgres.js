@@ -1,5 +1,6 @@
 
 module.exports = [
+  /*
   {
     type: 'exec',
     commands: [
@@ -8,14 +9,15 @@ module.exports = [
       'sudo apt update'
     ]
   },
+  */
   {
     type: 'aptpkg',
     packages: [
-      'postgresql-12',
-      'postgresql-client-12',
+      'postgresql-11',
+      'postgresql-client-11',
       'postgresql-contrib',
-      'postgresql-server-dev-12',
-      'pgadmin4',
+      'postgresql-server-dev-11',
+      'pgadmin3'
     ]
   }
 ]

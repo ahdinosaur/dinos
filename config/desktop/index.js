@@ -6,6 +6,7 @@ module.exports = [
     type: 'aptsource',
     name: 'ppa:regolith-linux/release'
   },
+
   {
     type: 'aptpkg',
     packages: [
@@ -18,6 +19,21 @@ module.exports = [
       'redshift-gtk'
     ]
   },
+  // alacritty (terminal emulator)
+  {
+    type: 'aptsource',
+    name: 'ppa:mmstick76/alacritty'
+  },
+  {
+    type: 'aptpkg',
+    package: 'alacritty'
+  },
+  {
+    type: 'exec',
+    command: 'update-alternatives --set x-terminal-emulator "$(which alacritty)"',
+    sudo: true
+  },
+  // configure i3
   {
     type: 'exec',
     commands: [

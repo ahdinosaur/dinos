@@ -1,42 +1,44 @@
 const { join } = require('path')
 
-// https://github.com/ggreer/the_silver_searcher
 module.exports = [
   {
     type: 'aptpkg',
     packages: [
-      // terminal
-      'xclip',
-      // 'bluedevil'
       'htop',
-      // 'mc',
+      'mc',
       'tree',
       'wget',
       'curl',
-      // 'aria2',
-      // 'rtorrent',
+
+      // https://github.com/ggreer/the_silver_searcher
       'silversearcher-ag',
 
       // virtual machines
-//      'virtualbox',
+      'virtualbox',
 
       // disk utilities
-//      'gparted',
-      // TODO disk space viewer
+      'gnome-disk-utility',
+      // disk space viewer
+      'ncdu',
 
       // security
-//      'wireshark',
+      'wireshark',
       'nmap'
-//      'keepassx'
     ]
-  }
+  },
   // peek (https://github.com/phw/peek#ubuntu)
+  {
+    type: 'aptsource',
+    name: 'ppa:peek-developers/stable'
+  },
+  {
+    type: 'aptpkg',
+    package: 'peek'
+  },
   // heroku-cli
-  /*
   {
     type: 'exec',
-    command: 'curl https://cli-assets.heroku.com/install-ubuntu.sh | sh',
+    command: 'if ! [ -x "$(command -v heroku)" ]; then curl https://cli-assets.heroku.com/install-ubuntu.sh | sh; fi',
     sudo: true
   }
-  */
 ]
