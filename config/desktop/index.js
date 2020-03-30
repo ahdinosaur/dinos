@@ -70,7 +70,13 @@ module.exports = [
     type: 'exec',
     commands: [
       // set keyboard layouts
-      `gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us+colemak'), ('xkb', 'us')]"`
+      `gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us+colemak'), ('xkb', 'us')]"`,
+      // set natural (reverse) mouse scroll
+      'gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true',
+      // power manager
+      'gsettings set org.gnome.desktop.session idle-delay 0',
+      'gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type nothing',
+      'gsettings set org.gnome.settings-daemon.plugins.power power-button-action suspend'
     ]
   }
 ]

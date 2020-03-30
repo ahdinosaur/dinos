@@ -10,6 +10,7 @@ module.exports = [
     type: 'aptpkg',
     packages: [
       'git',
+      'git-lfs',
       'git-gui',
       'hub'
     ]

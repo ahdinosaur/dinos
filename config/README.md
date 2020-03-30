@@ -1,20 +1,42 @@
+# personal config
 
-## vim
+## manual steps
+
+### upload ssh key
+
+- GitHub
+- DigitalOcean?
+
+### logins
+
+- LastPass
+- 1Pass
+
+### Postgres
+
+```
+sudo -u postgres createuser -s $(whoami)
+```
+
+### Android Studio
+
+```shell
+/opt/android-studio/bin/studio.sh
+# install
+# settings -> appearance & behavior -> system settings -> android sdk -> sdk tools -> install android sdk command-line tools
+yes | ~/Android/Sdk/cmdline-tools/latest/bin/sdkmanager --license
+```
+
+## notes / todos
+
+### vim
 
 maybe
 
 https://github.com/Shougo/unite.vim
 https://github.com/benekastah/neomake
 
-## git
-
-hub: https://github.com/ahdinosaur-os/git-formula/blob/master/git/hub.sls
-
-## nvm
-
-## rvm
-
-## desktop (regolith)
+### desktop (regolith)
 
 - https://i3wm.org/docs/userguide.html
 - https://github.com/regolith-linux/regolith-i3xrocks-config/blob/master/config
@@ -71,11 +93,6 @@ steps
   - activities
     - switching
       - disable walk through activities and reverse
-
-f.lux: https://justgetflux.com/linux.html
-
-- lat: -41.29
-  long: 174.78
 
 ## web
 
