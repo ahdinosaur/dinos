@@ -87,13 +87,6 @@ instance=BAT0
 [load_average]
 interval=10
 
-# Rofication
-#
-# Displays notifications.
-[rofication]
-command=/usr/share/i3xrocks/rofication-statusi3blocks.py
-interval=10
-
 # Date Time
 [time]
 interval=10

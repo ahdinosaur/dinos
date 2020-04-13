@@ -52,7 +52,11 @@ module.exports = [
   // node.js
   {
     type: 'exec',
-    command: 'if [ ! -d "$HOME/.nvm" ]; then git clone git://github.com/nvm-sh/nvm.git "$HOME/.nvm"; fi; cd "$HOME/.nvm" && git pull && git checkout v0.35.3'
+    commands: [
+      `if [ ! -d "$HOME/.nvm" ]; then git clone git://github.com/nvm-sh/nvm.git "$HOME/.nvm"; fi; cd "$HOME/.nvm" && git pull && git checkout v0.35.3`,
+      `source "$HOME/.nvm/nvm.sh"`,
+      `nvm install 'lts/*'`
+    ]
   },
   // rust
   {

@@ -11,6 +11,7 @@ module.exports = [
     type: 'aptpkg',
     packages: [
       'regolith-desktop',
+      'dunst',
       'pulseaudio',
       'pavucontrol',
       'alsa-utils',
@@ -38,7 +39,8 @@ module.exports = [
     type: 'exec',
     commands: [
       'mkdir -p $HOME/.config/regolith/i3',
-      'mkdir -p $HOME/.config/regolith/i3xrocks'
+      'mkdir -p $HOME/.config/regolith/i3xrocks',
+      'mkdir -p $HOME/.config/dunst'
     ]
   },
   {
@@ -58,8 +60,8 @@ module.exports = [
   },
   {
     type: 'link',
-    source: join(__dirname, 'i3xrocks/blocks'),
-    target: '.config/regolith/i3xrocks/blocks'
+    source: join(__dirname, 'dunst/dunstrc'),
+    target: '.config/dunst/dunstrc'
   },
   {
     type: 'link',
@@ -79,5 +81,8 @@ module.exports = [
       'gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type nothing',
       'gsettings set org.gnome.settings-daemon.plugins.power power-button-action suspend'
     ]
-  }
+  },
+  // TODO looks
+  // ~/.Xresources-regolith
+  // regolith-look refresh
 ]

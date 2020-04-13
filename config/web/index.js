@@ -11,7 +11,9 @@ module.exports = [
 //      'xul-ext-adblock-plus',
 //      'xul-ext-https-everywhere',
 //      'xul-ext-noscript',
-      'deluge-gtk'
+      'deluge-gtk',
+      'deluged',
+      'mumble'
     ]
   },
   // google-chrome

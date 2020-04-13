@@ -1,14 +1,8 @@
 module.exports = [
-  /*
-  {
-    type: 'aptsource',
-    name: 'ppa:webupd8team/java'
-  },
   {
     type: 'aptpkg',
-    package: 'oracle-java8-installer'
+    package: 'adb'
   },
-  */
   {
     type: 'aptsource',
     name: 'ppa:maarten-fonville/android-studio'
@@ -16,5 +10,11 @@ module.exports = [
   {
     type: 'aptpkg',
     package: 'android-studio'
+  },
+  {
+    type: 'exec',
+    commands: [
+      'sudo usermod -aG plugdev $(whoami)'
+    ]
   }
 ]

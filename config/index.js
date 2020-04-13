@@ -8,10 +8,10 @@ module.exports = {
   zsh: require('./zsh'),
   vim: require('./vim'),
   git: require('./git'),
-  */
   web: require('./web'),
-  /*
+  */
   desktop: require('./desktop'),
+  /*
   docker: require('./docker'),
   postgres: require('./postgres'),
   dev: require('./dev'),

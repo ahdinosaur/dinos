@@ -27,6 +27,20 @@ sudo -u postgres createuser -s $(whoami)
 yes | ~/Android/Sdk/cmdline-tools/latest/bin/sdkmanager --license
 ```
 
+### iommu
+
+https://askubuntu.com/a/749994
+
+`/etc/default/grub`
+
+```
+GRUB_CMDLINE_LINUX="iommu=soft"
+```
+
+```
+sudo update-grub
+```
+
 ## notes / todos
 
 ### vim
