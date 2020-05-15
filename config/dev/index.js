@@ -23,7 +23,10 @@ module.exports = [
 
       // security
       'wireshark',
-      'nmap'
+      'nmap',
+
+      // color picker
+      'gpick'
     ]
   },
   // peek (https://github.com/phw/peek#ubuntu)

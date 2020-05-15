@@ -2,7 +2,18 @@ module.exports = [
   {
     type: 'aptpkg',
     packages: [
-      'vlc'
+      'vlc',
+      'ffmpeg'
+    ]
+  },
+  {
+    type: 'aptsource',
+    name: 'ppa:obsproject/obs-studio'
+  },
+  {
+    type: 'aptpkg',
+    packages: [
+      'obs-studio'
     ]
   }
 ]
