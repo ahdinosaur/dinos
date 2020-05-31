@@ -17,6 +17,13 @@ function aptPkg (options) {
 
   if (package) packages.push(package)
 
+  // TODO only try to install if not installed
+  /*
+  function is_installed () {
+    dpkg-query -W -f='${Status}' $1 2>/dev/null | grep -c "ok installed" > /dev/null
+  }
+  */
+
   var commands = []
 
   commands.push(`apt install -y ${packages.join(' ')}`)
