@@ -41,7 +41,7 @@ _ignore_
 
 ```shell
 # on debian: adduser dinosaur sudo
-sudo apt install git node npm
+sudo apt install git nodejs npm
 mkdir -p ~/repos/ahdinosaur
 cd ~/repos/ahdinosaur
 git clone git://github.com/ahdinosaur/dinos

@@ -10,6 +10,12 @@ module.exports = [
     ]
   },
   {
+    type: 'exec',
+    commands: [
+      'mkdir -p $HOME/.config/nvim'
+    ]
+  },
+  {
     type: 'link',
     source: join(__dirname, 'init.vim'),
     target: '.config/nvim/init.vim'
