@@ -24,7 +24,7 @@ module.exports = [
   // zoom
   {
     type: 'exec',
-    command: 'if ! [ -x "$(command -v zoom)" ]; then mdkir ~/tmp; cd ~/tmp; wget "wget https://zoom.us/client/latest/zoom_amd64.deb" -O zoom.deb; sudo dpkg -i zoom.deb; sudo apt install -yf; fi'
+    command: 'if ! [ -x "$(command -v zoom)" ]; then mkdir ~/tmp; cd ~/tmp; wget "https://zoom.us/client/latest/zoom_amd64.deb" -O zoom.deb; sudo dpkg -i zoom.deb; sudo apt install -yf; fi'
   },
   // spotify
   {
