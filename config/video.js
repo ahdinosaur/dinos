@@ -5,7 +5,7 @@ module.exports = [
       'vlc',
       'ffmpeg',
       'handbrake', // ffmpeg gui
-      'kazam', // screen recorder
+      'kazam' // screen recorder
     ]
   },
   {

@@ -13,10 +13,10 @@ module.exports = [
   {
     type: 'aptpkg',
     packages: [
-      'postgresql-11',
-      'postgresql-client-11',
+      'postgresql-12',
+      'postgresql-client-12',
       'postgresql-contrib',
-      'postgresql-server-dev-11',
+      'postgresql-server-dev-12',
       'pgadmin3'
     ]
   }

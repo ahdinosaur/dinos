@@ -10,7 +10,7 @@ module.exports = {
   git: require('./git'),
   web: require('./web'),
   */
-  desktop: require('./desktop'),
+  desktop: require('./desktop')
   /*
   docker: require('./docker'),
   postgres: require('./postgres'),

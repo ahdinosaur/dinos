@@ -7,7 +7,7 @@ module.exports = [
   },
   {
     type: 'aptsource',
-    name: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu eoan stable'
+    name: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable'
   },
   {
     type: 'exec',

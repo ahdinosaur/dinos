@@ -81,7 +81,7 @@ module.exports = [
       'gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-type nothing',
       'gsettings set org.gnome.settings-daemon.plugins.power power-button-action suspend'
     ]
-  },
+  }
   // TODO looks
   // ~/.Xresources-regolith
   // regolith-look refresh

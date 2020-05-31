@@ -10,10 +10,9 @@ module.exports = [
       'mumble',
       'mumble-server'
     ]
-  }
+  },
   // port forwarding
   //   upnpc -r 64738 UDP 64738 TCP
-
 
   // teamspeak
   {
