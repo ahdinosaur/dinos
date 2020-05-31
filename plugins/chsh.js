@@ -28,7 +28,8 @@ function chSh (options) {
       log.info(user)
       if (user.shell === shell) return cb(null)
       exec({
-        command: `chsh -s "${shell}" "${username}"`
+        command: `chsh -s "${shell}" "${username}"`,
+        sudo: true
       })(cb)
     }
   ]
