@@ -56,7 +56,7 @@ module.exports = [
   {
     type: 'exec',
     commands: [
-      `if [ ! -d "$HOME/.nvm" ]; then git clone git://github.com/nvm-sh/nvm.git "$HOME/.nvm"; fi; cd "$HOME/.nvm" && git pull && git checkout v0.35.3`,
+      `if [ ! -d "$HOME/.nvm" ]; then git clone git://github.com/nvm-sh/nvm.git "$HOME/.nvm"; fi; cd "$HOME/.nvm" && git pull && git checkout v0.35.3; cd "$HOME"`,
       `. "$HOME/.nvm/nvm.sh"`,
       `nvm install 'lts/*'`
     ]
