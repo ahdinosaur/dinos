@@ -41,7 +41,7 @@ module.exports = [
       'mkdir -p $HOME/.config/regolith/i3',
       'mkdir -p $HOME/.config/regolith/i3xrocks',
       'mkdir -p $HOME/.config/dunst',
-      'mkdir -p $HOME/.config/pacellite'
+      'mkdir -p $HOME/.config/parcellite'
     ]
   },
   {
