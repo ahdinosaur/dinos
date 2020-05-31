@@ -17,7 +17,11 @@ module.exports = [
       'alsa-utils',
       'fonts-font-awesome',
       'parcellite',
-      'redshift-gtk'
+      'redshift-gtk',
+
+      // emoji fonts
+      'fonts-symbola',
+      'fonts-noto-color-emoji'
     ]
   },
   // alacritty (terminal emulator)

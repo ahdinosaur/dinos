@@ -5,7 +5,8 @@ module.exports = [
       'apt-transport-https',
       'software-properties-common', // add-apt-repository
       'build-essential',
-      'curl'
+      'curl',
+      'ubuntu-restricted-extras'
     ]
   },
   // if on desktop,
