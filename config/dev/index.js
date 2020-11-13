@@ -13,6 +13,10 @@ module.exports = [
       // https://github.com/ggreer/the_silver_searcher
       'silversearcher-ag',
 
+      // https://github.com/clvv/fasd
+      // (used by slimzsh)
+      'fasd',
+
       // virtual machines
       'virtualbox',
 
