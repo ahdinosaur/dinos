@@ -41,6 +41,18 @@ GRUB_CMDLINE_LINUX="iommu=soft"
 sudo update-grub
 ```
 
+### amd drivers
+
+https://www.amd.com/en/support/kb/release-notes/rn-amdgpu-unified-linux-20-20
+
+ensure we install OpenCL
+
+```
+amdgpu-pro-install -y --opencl=pal,legacy
+```
+
+### davinci resolve
+
 ## notes / todos
 
 ### vim

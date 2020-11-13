@@ -7,25 +7,24 @@ call plug#begin('~/.vim/plugged')
 
 " --- Plugs! ---
 Plug 'ahdinosaur/vim-colemak'
-Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-sensible'
 Plug 'mhinz/vim-grepper'
 Plug 'kien/ctrlp.vim'
-" Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --ts-completer --rust-completer' }
-Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --ts-completer --rust-completer' }
 Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'jason0x43/vim-js-indent'
-Plug 'rust-lang/rust.vim'
 Plug 'sirtaj/vim-openscad'
-Plug 'w0rp/ale'
-Plug 'jxnblk/vim-mdx-js'
+Plug 'dense-analysis/ale'
+Plug 'sheerun/vim-polyglot'
+
+" color schemes
+" Plug 'flazz/vim-colorschemes'
+" Plug 'dracula/vim', { 'as': 'dracula' }
+" Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
 " --- /Plugs! ---
 
 call plug#end()
@@ -38,7 +37,15 @@ syntax enable " legacy vim
 set termguicolors
 set t_Co=256 " legacy vim
 set background=dark
-colorscheme candycode
+colorscheme jellybeans
+
+let g:jellybeans_overrides = {
+\    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
+\}
+if has('termguicolors') && &termguicolors
+    let g:jellybeans_overrides['background']['guibg'] = 'none'
+endif
+let g:jellybeans_use_term_italics = 1
 
 " jump to the last position when
 " reopening a file
@@ -133,9 +140,13 @@ let g:rustfmt_autosave = 1
 " eslint
 let g:ale_javascript_eslint_suppress_missing_config = 1
 let g:ale_linters = {
-\  'javascript': ['eslint', 'standard']
+\  'javascript': ['eslint', 'standard'],
+\  'typescript': ['tsserver', 'eslint'],
+\  'typescriptreact': ['tsserver', 'eslint'],
 \}
 let g:ale_fixers = {
-\  'javascript': ['prettier', 'eslint', 'prettier_standard', 'standard']
+\  'javascript': ['prettier', 'eslint', 'standard'],
+\  'typescript': ['prettier', 'eslint'],
+\  'typescriptreact': ['prettier', 'eslint'],
 \}
 let g:ale_fix_on_save = 1

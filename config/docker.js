@@ -3,16 +3,11 @@ module.exports = [
   {
     type: 'exec',
     // command: `curl -fsSL https://download.docker.com/linux/debian/gpg | sudo tee /etc/apt/trusted.gpg.d/docker.asc`
-    command: 'curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -'
-  },
-  {
-    type: 'aptsource',
-    name: 'deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable'
-  },
-  {
-    type: 'exec',
-    command: 'apt update -y',
-    sudo: true
+    command: [
+      'curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -',
+      'echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" | sudo tee -a /etc/apt/sources.list.d/docker.list',
+      'sudo apt update'
+    ]
   },
   {
     type: 'aptpkg',
