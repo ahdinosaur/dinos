@@ -14,8 +14,9 @@ module.exports = [
       'silversearcher-ag',
 
       // https://github.com/clvv/fasd
-      // (used by slimzsh)
-      'fasd',
+      // 'fasd',
+
+      // 'fzf',
 
       // virtual machines
       'virtualbox',
