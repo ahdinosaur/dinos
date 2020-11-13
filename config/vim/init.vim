@@ -8,13 +8,13 @@ call plug#begin('~/.vim/plugged')
 " --- Plugs! ---
 Plug 'ahdinosaur/vim-colemak'
 Plug 'tpope/vim-sensible'
-Plug 'mhinz/vim-grepper'
-Plug 'kien/ctrlp.vim'
+"Plug 'mhinz/vim-grepper'
+"Plug 'kien/ctrlp.vim'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --ts-completer --rust-completer' }
-Plug 'vim-syntastic/syntastic'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-fugitive'
+"Plug 'vim-syntastic/syntastic'
+"Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdcommenter'
+"Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'sirtaj/vim-openscad'
 Plug 'dense-analysis/ale'
@@ -106,33 +106,33 @@ noremap <leader>yy "*Y
 noremap <leader>p :set paste<CR>:put  *<CR>:set nopaste<CR>
 
 " NERDTree
-nmap <leader>n :NERDTreeToggle<CR>
-let NERDTreeHighlightCursorline=1
-let NERDTreeIgnore = []
+"nmap <leader>n :NERDTreeToggle<CR>
+"let NERDTreeHighlightCursorline=1
+"let NERDTreeIgnore = []
 "let NERDTreeIgnore = ['node_modules']
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = { 'mode': 'passive' }
-let g:syntastic_javascript_checkers = ['standard']
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_mode_map = { 'mode': 'passive' }
+"let g:syntastic_javascript_checkers = ['standard']
 
 " CtrlP
 "nnoremap <silent> t :CtrlP<cr>
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "set wildignore+=node_modules
-let g:ctrlp_working_path_mode = 2
+"let g:ctrlp_working_path_mode = 2
 "let g:ctrlp_by_filename = 1
-let g:ctrlp_max_files = 20000
-let g:ctrlp_max_depth = 20
+"let g:ctrlp_max_files = 20000
+"let g:ctrlp_max_depth = 20
 
 "fugitive
-set statusline+=%{fugitive#statusline()}
+"set statusline+=%{fugitive#statusline()}
 
 " rust
 let g:rustfmt_autosave = 1
