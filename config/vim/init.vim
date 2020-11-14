@@ -69,6 +69,9 @@ set hidden   " Hide buffers when they are abandoned
 set mouse=a    " Enable mouse usage (all modes)
 set encoding=utf-8  " Set encoding as UTF-8"
 
+" disable modeline (as in vim)
+set nomodeline
+
 " set tab / spaces
 set tabstop=8
 set expandtab
