@@ -27,6 +27,6 @@ module.exports = [
   },
   {
     type: 'chsh',
-    shell: '/bin/zsh'
+    shell: '/usr/bin/zsh'
   }
 ]
