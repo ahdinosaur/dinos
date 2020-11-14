@@ -44,8 +44,12 @@ module.exports = [
   },
   // ruby
   {
-    type: 'aptsource',
-    name: 'ppa:rael-gc/rvm'
+    type: 'exec',
+    commands: [
+      'sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8094BB14F4E3FBBE',
+      'echo "deb http://ppa.launchpad.net/rael-gc/rvm/ubuntu focal main " | sudo tee -a /etc/apt/sources.list.d/rvm.list',
+      'sudo apt update'
+    ]
   },
   {
     type: 'aptpkg',

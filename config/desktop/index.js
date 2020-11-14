@@ -26,8 +26,12 @@ module.exports = [
   },
   // alacritty (terminal emulator)
   {
-    type: 'aptsource',
-    name: 'ppa:mmstick76/alacritty'
+    type: 'exec',
+    commands: [
+      'sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8ac9b4bbbab4900b',
+      'echo "deb http://ppa.launchpad.net/mmstick76/alacritty/ubuntu focal main " | sudo tee -a /etc/apt/sources.list.d/alacritty.list',
+      'sudo apt update'
+    ]
   },
   {
     type: 'aptpkg',
