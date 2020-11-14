@@ -31,17 +31,11 @@ module.exports = [
       'nmap',
 
       // color picker
-      'gpick'
+      'gpick',
+
+      // peek (https://github.com/phw/peek#ubuntu)
+      'peek'
     ]
-  },
-  // peek (https://github.com/phw/peek#ubuntu)
-  {
-    type: 'aptsource',
-    name: 'ppa:peek-developers/stable'
-  },
-  {
-    type: 'aptpkg',
-    package: 'peek'
   },
   // heroku-cli
   {
