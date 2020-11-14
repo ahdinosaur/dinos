@@ -6,34 +6,32 @@ a personal Debian Linux distribution using a custom configuration managment syst
 
 ## features
 
-- [ ] provides base configuration management features
-  - [x] file (as a symlink)
-  - [x] directory (as a symlink)
-  - [x] shell script
-  - [x] git repo
-  - [x] apt package
-  - [x] apt source
-- [ ] supports personal desktop environment configurations
-  - [x] debian
-  - [ ] users
-  - [x] zsh
-  - [x] vim
-  - [ ] nvm
-  - [ ] rvm
-  - [?] desktop (kde + i3)
-  - [ ] wifi
-  - [x] git
-  - [?] web
-  - [ ] printer
-  - [ ] word
-  - [ ] spreadsheet
-  - [ ] photo
-  - [ ] drawing
-  - [ ] video
-  - [ ] 3d
-  - [ ] circuits
-- [ ] graphical interface to show configuration and status
-  - [ ] detect conflicting changes but don't override without permission
+- base configuration management features
+  - file (as a symlink)
+  - directory (as a symlink)
+  - shell script
+  - git repo
+  - apt package
+  - apt source
+- supports personal desktop environment configurations
+  - android
+  - apps
+    - docs
+    - photo
+    - drawing
+    - video
+    - 3d
+    -  circuits
+  - base
+  - desktop
+  - dev
+  - docker
+  - git
+  - postgres
+  - ssh
+  - video
+  - vim
+  - zsh
 
 ## start
 
@@ -53,18 +51,6 @@ node bin
 ## config
 
 see [config](./config/README.md)
-
-## plugin format
-
-_ignore_
-
-a "plugin" is a `dinos` module:
-
-- is passed a configuration
-- reads the current state of the machine
-- compares the current state with the intended state
-- changes the current state to match the intended state
-- provides progress updates and status on the success or failure of the change
 
 ## history
 

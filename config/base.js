@@ -9,10 +9,9 @@ module.exports = [
       'ubuntu-restricted-extras'
     ]
   },
-  // if on desktop,
   // make Linux use local time, so we can dual-boot with Windows
   {
     type: 'exec',
-    command: 'if [ "$(hostname)" = "blue-dream" ]; then timedatectl set-local-rtc 1 --adjust-system-clock; fi'
+    command: 'timedatectl set-local-rtc 1 --adjust-system-clock'
   }
 ]

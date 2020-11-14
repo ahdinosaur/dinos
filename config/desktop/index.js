@@ -8,9 +8,15 @@ module.exports = [
   },
 
   {
+    type: 'exec',
+      'if [ "$(hostname)" = "blue-dream" ]; then sudo apt install -y regolith- timedatectl set-local-rtc 1 --adjust-system-clock; fi
+      'regolith-desktop',
+  },
+
+
+  {
     type: 'aptpkg',
     packages: [
-      'regolith-desktop',
       'dunst',
       'pulseaudio',
       'pavucontrol',

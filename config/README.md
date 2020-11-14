@@ -53,8 +53,6 @@ amdgpu-pro-install -y --opencl=pal,legacy
 
 ### davinci resolve
 
-## notes / todos
-
 ### vim
 
 maybe
