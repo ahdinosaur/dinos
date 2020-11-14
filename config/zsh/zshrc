@@ -55,7 +55,7 @@ zinit lucid \
 export LANG="en_NZ.UTF-8"
 
 # Preferred editor for local and remote sessions
-export EDITOR='vim'
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -63,6 +63,7 @@ export EDITOR='vim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+alias vim='nvim'
 alias gs="git status"
 
 alias android-studio='/opt/android-studio/bin/studio.sh'
