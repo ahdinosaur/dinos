@@ -16,7 +16,7 @@ module.exports = [
       // https://github.com/clvv/fasd
       // 'fasd',
 
-      // 'fzf',
+      'fzf',
 
       // virtual machines
       'virtualbox',

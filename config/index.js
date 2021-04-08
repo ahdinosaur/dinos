@@ -9,8 +9,8 @@ module.exports = {
 
   dev: require('./dev'),
   docker: require('./docker'),
-  postgres: require('./postgres'),
-  android: require('./android'),
+//  postgres: require('./postgres'),
+// android: require('./android'),
 
   apps: require('./apps')
 }

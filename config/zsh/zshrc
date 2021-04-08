@@ -30,6 +30,7 @@ zinit wait lucid for \
   OMZL::termsupport.zsh \
   OMZP::colored-man-pages \
   OMZP::debian \
+  OMZP::fzf \
   OMZP::git \
   OMZP::github \
   OMZP::gitignore \
@@ -38,6 +39,7 @@ zinit wait lucid for \
   OMZP::npm \
   OMZP::nvm \
   OMZP::sudo
+
 
 zinit wait lucid for \
   atinit"zicompinit; zicdreplay" \
@@ -70,3 +72,8 @@ alias android-studio='/opt/android-studio/bin/studio.sh'
 
 # added by travis gem
 [ -f /home/dinosaur/.travis/travis.sh ] && source /home/dinosaur/.travis/travis.sh
+
+# fzf
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
