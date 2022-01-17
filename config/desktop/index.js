@@ -94,4 +94,9 @@ module.exports = [
   // TODO looks
   // ~/.Xresources-regolith
   // regolith-look refresh
+
+
+  // TODO pamixer
+  // sudo add-apt-repository ppa:dysfunctionalprogramming/pamixer
+  // sudo apt install pamixer
 ]

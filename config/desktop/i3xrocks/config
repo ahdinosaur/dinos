@@ -42,10 +42,8 @@ command=i3-msg -q exec /usr/bin/remontoire-toggle
 interval=1
 
 # Volume
-[volume_pulseaudio]
-interval=5
-signal=1
-USE_ALSA_NAME=1
+[volume_pipewire]
+interval=2
 
 # Network manager VPN
 #
