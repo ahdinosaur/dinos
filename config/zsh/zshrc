@@ -1,21 +1,29 @@
-# install zinit
-if [[ ! -f $HOME/.config/zinit/bin/zinit.zsh ]]; then
-  command mkdir -p "$HOME/.config/zinit" && command chmod g-rwX "$HOME/.config/zinit"
-  command git clone https://github.com/zdharma/zinit "$HOME/.config/zinit/bin"
+# install zi
+if [[ ! -f $HOME/.config/zi/bin/zi.zsh ]]; then
+  print -P "%F{33}▓▒░ %F{220}Installing %F{33}ZI%F{220} Initiative Plugin Manager (%F{33}z-shell/zi%F{220})…%f"
+  command mkdir -p "$HOME/.config/zi" && command chmod g-rwX "$HOME/.config/zi"
+  command git clone https://github.com/z-shell/zi "$HOME/.config/zi/bin" && \
+    print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+    print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
 
-declare -A ZINIT
-ZINIT[HOME_DIR]="$HOME/.config/zinit"
+declare -A ZI
+ZI[HOME_DIR]="$HOME/.config/zi"
 
-source "$HOME/.config/zinit/bin/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-# end of zinit install
+source "$HOME/.config/zi/bin/zi.zsh"
+autoload -Uz _zi
+(( ${+_comps} )) && _comps[zi]=_zi
+# end of zi install
 
 setopt promptsubst
 
 zinit lucid for \
-  OMZL::history.zsh
+  OMZL::history.zsh \
+  OMZP::last-working-dir
+
+zinit lucid \
+  pick"/dev/null" multisrc"{async,pure}.zsh" for \
+  sindresorhus/pure
 
 zinit wait lucid for \
   OMZL::clipboard.zsh \
@@ -34,24 +42,18 @@ zinit wait lucid for \
   OMZP::git \
   OMZP::github \
   OMZP::gitignore \
-  OMZP::last-working-dir \
   OMZP::node \
   OMZP::npm \
   OMZP::nvm \
   OMZP::sudo
 
-
 zinit wait lucid for \
   atinit"zicompinit; zicdreplay" \
-      zdharma/fast-syntax-highlighting \
+      z-shell/fast-syntax-highlighting \
   blockf atpull'zinit creinstall -q .' \
       zsh-users/zsh-completions \
   as"completion" \
     OMZP::docker/_docker
-
-zinit lucid \
-  pick"/dev/null" multisrc"{async,pure}.zsh" for \
-  sindresorhus/pure
 
 # You may need to manually set your language environment
 export LANG="en_NZ.UTF-8"
