@@ -17,7 +17,6 @@ module.exports = [
       'alsa-utils',
       'fonts-font-awesome',
       'parcellite',
-      'redshift-gtk',
 
       // emoji fonts
       'fonts-symbola',
