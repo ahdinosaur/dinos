@@ -20,6 +20,9 @@ Plug 'sirtaj/vim-openscad'
 Plug 'dense-analysis/ale'
 Plug 'sheerun/vim-polyglot'
 
+" CoC
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " color schemes
 " Plug 'flazz/vim-colorschemes'
 " Plug 'dracula/vim', { 'as': 'dracula' }
