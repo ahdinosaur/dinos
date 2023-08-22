@@ -26,5 +26,5 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 export PATH="$PATH:cmdline-tools/latest/bin"
 hash adb="$ANDROID_HOME/platform-tools/adb"
 
-# platform.io
+# platform.io (arduino)
 export PATH=$PATH:~/.platformio/penv/bin

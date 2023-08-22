@@ -104,6 +104,9 @@ bindsym $mod+Ctrl+a scratchpad show
 # change focus between tiling / floating windows
 bindsym $mod+Shift+t focus mode_toggle
 
+# force floating for all new windows
+# for_window [class="[.]*"] floating enable
+
 # toggle tabbed mode
 bindsym $mod+t layout toggle tabbed splith splitv
 

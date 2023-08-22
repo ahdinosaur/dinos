@@ -8,6 +8,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 " --- Plugs! ---
 Plug 'ahdinosaur/vim-colemak'
 Plug 'tpope/vim-sensible'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 "Plug 'mhinz/vim-grepper'
 "Plug 'kien/ctrlp.vim'
 Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clangd-completer --ts-completer --rust-completer' }
@@ -41,6 +43,7 @@ set termguicolors
 set t_Co=256 " legacy vim
 set background=dark
 colorscheme jellybeans
+let g:airline_theme='jellybeans'
 
 let g:jellybeans_overrides = {
 \    'background': { 'ctermbg': 'none', '256ctermbg': 'none' },
@@ -145,6 +148,9 @@ let g:rustfmt_autosave = 1
 
 " eslint
 let g:ale_javascript_eslint_suppress_missing_config = 1
+let g:ale_javascript_eslint_executable = 'eslint'
+let g:ale_javascript_eslint_use_global = 0
+let g:ale_javascript_eslint_options = '--cache'
 let g:ale_linters = {
 \  'javascript': ['eslint', 'standard'],
 \  'typescript': ['tsserver', 'eslint'],
@@ -156,3 +162,5 @@ let g:ale_fixers = {
 \  'typescriptreact': ['prettier', 'eslint'],
 \}
 let g:ale_fix_on_save = 1
+let g:airline#extensions#ale#enabled = 1
+noremap <leader>e :ALEDetail<CR>
